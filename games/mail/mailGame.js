@@ -244,7 +244,7 @@ function updateEmailDisplay() {
 
             // Create and add the next game link
             const nextGameLink = document.createElement('a');
-            nextGameLink.innerHTML = 'Next Game';
+            nextGameLink.innerHTML = 'Go to Desktop';
             nextGameLink.href = '/games/desktop/index.html';
             nextGameLink.style.cssText = `
                 display: inline-block;

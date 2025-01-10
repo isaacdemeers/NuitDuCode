@@ -5,7 +5,7 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="icon" href="favicon.png">
-	<title>p5play</title>
+	<title>Desktop Game</title>
 	<style>
 		html,
 		body {
@@ -14,14 +14,40 @@
 			padding: 0;
 			overscroll-behavior: none;
 		}
+
+		#start-screen {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1000;
+			cursor: pointer;
+		}
+
+		#start-screen img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	</style>
 </head>
 
 <body>
+	<div id="start-screen">
+		<img src="./assets/rules.png" alt="Game Rules">
+	</div>
+
 	<main>
 		<a href="../../index.html" style="color: #4954CE; position: absolute; top: 20px; left: 20px;">HOME</a>
-
 	</main>
+
+	<script>
+		document.getElementById('start-screen').addEventListener('click', function() {
+			this.style.opacity = '0';
+			setTimeout(() => this.remove(), 500);
+		});
+	</script>
 
 	<!-- ONLINE LINKS -->
 	<script src="https://q5js.org/q5.js"></script>

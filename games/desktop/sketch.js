@@ -178,6 +178,33 @@ function draw() {
   noStroke();
   textStyle(NORMAL);
 
+  // Vérifier si tous les fichiers ont été rangés
+  let remainingFiles = logos.filter(logo => logo.type === "fichier").length;
+  if (remainingFiles === 0) {
+    // Créer le lien vers Picture Tiles s'il n'existe pas déjà
+    if (!document.getElementById('next-game-link')) {
+      const nextGameLink = document.createElement('a');
+      nextGameLink.id = 'next-game-link';
+      nextGameLink.href = '../picture_tiles/index.html';
+      nextGameLink.innerHTML = 'Go to Picture Tiles';
+      nextGameLink.style.cssText = `
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 20px 40px;
+          background-color: #4954CE;
+          color: white;
+          text-decoration: none;
+          border-radius: 10px;
+          font-size: 24px;
+          font-weight: bold;
+          z-index: 1000;
+        `;
+      document.body.appendChild(nextGameLink);
+    }
+  }
+
   // Afficher les noms sous chaque élément
   textSize(16);
   textAlign(CENTER);

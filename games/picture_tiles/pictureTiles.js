@@ -222,4 +222,27 @@ function drawGameEnd() {
     fill(0);
     text('Well done!', width / 2, height / 2);
     pop();
+
+    // Créer le lien vers la page d'accueil s'il n'existe pas déjà
+    if (!document.getElementById('home-link')) {
+        const homeLink = document.createElement('a');
+        homeLink.id = 'home-link';
+        homeLink.href = '../../index.html';
+        homeLink.innerHTML = 'Return Home';
+        homeLink.style.cssText = `
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px 40px;
+            background-color: #D8A32D;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 1000;
+        `;
+        document.body.appendChild(homeLink);
+    }
 }
