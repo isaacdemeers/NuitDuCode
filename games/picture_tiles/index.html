@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" href="favicon.png">
+	<title>Picture Tiles</title>
+	<link rel="stylesheet" href="../../styles.css">
+	<style>
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #FFE5AE;
+		}
+
+		main {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 20px;
+		}
+
+		canvas {
+			display: block;
+		}
+
+		#score-display {
+			background-color: #EBC778;
+			padding: 20px;
+			border-radius: 10px;
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		.score-value {
+			font-size: 48px;
+			color: #000;
+			margin: 10px 0;
+		}
+	</style>
+</head>
+
+<body>
+	<a href="../../index.html" style="color: #D8A32D; position: absolute; top: 20px; left: 20px;">HOME</a>
+
+	<div id="score-display" style="position: absolute; top: 20px; right: 20px;">
+		<div style="color: #D8A32D;">Score</div>
+		<div style="color: #D8A32D;" class="score-value">0</div>
+	</div>
+	<h2
+		style=" position: absolute; margin: 0; color: #D8A32D; font-size: 50px; top: 60px; left: 50%; transform: translate(-50%, -50%);">
+		Picture Tiles</h2>
+
+	<main style="position: relative;">
+		<div id="game-container"></div>
+
+
+
+		<img src="./assets/full.png" alt=""
+			style="position: absolute; width: 310px; z-index: 10; transform: translate(-50%, -50%); left: 50%; top: 53%;">
+
+	</main>
+
+
+	<!-- ONLINE LINKS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+	<script src="https://p5play.org/v3/planck.min.js"></script>
+	<script src="https://p5play.org/v3/p5play.js"></script>
+
+	<script src="pictureTiles.js" type="module"></script>
+</body>
+
+</html>
